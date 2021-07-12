@@ -1,0 +1,47 @@
+@media (max-width: $mobile-width) {
+  .accordion .accordion__title {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .accordion--open .accordion__main-content {
+    display: block;
+  }
+
+  .accordion--open .accordion__title::before {
+    content: '';
+
+    position: absolute;
+    right: 0;
+    top: 5px;
+
+    display: block;
+    width: 16px;
+    height: 1px;
+
+    background-color: $gray;
+  }
+
+  .accordion--close .accordion__main-content {
+    display: none;
+  }
+
+  .accordion--close .accordion__title::before,
+  .accordion--close .accordion__title::after {
+    content: '';
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: block;
+    width: 16px;
+    height: 1px;
+
+    background-color: $gray;
+  }
+
+  .accordion--close .accordion__title::before {
+    transform: rotate(90deg);
+  }
+}

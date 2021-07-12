@@ -8,11 +8,11 @@
   padding: 110px 13%;
 
   @media (max-width: $tablet-width) {
-    padding: 59px 25px;
+    padding: 49px 25px 82px 25px;
   }
 
   @media (max-width: $mobile-width) {
-    padding: 59px 15px;
+    padding: 21px 15px 52px;
   }
 }
 
@@ -20,7 +20,7 @@
 .about-us__header {
   position: relative;
 
-  margin: 0 0 35px 178px;
+  margin: 0 0 35px 305px;
 
   font-family: $font-header;
   font-style: normal;
@@ -31,11 +31,12 @@
   color: $gray-text;
 
   @media (max-width: $tablet-width) {
-    margin: 0 0 23px 178px;
+    margin: 0 0 23px 184px;
+    font-size: 32px;
   }
 
   @media (max-width: $mobile-width) {
-    margin: 0 0 18px 0;
+    margin: 0 0 20px 0;
 
     font-size: 28px;
     line-height: 140.62%;
@@ -64,7 +65,7 @@
 }
 
 .about-us__text {
-  margin: 0 0 25px 178px;
+  margin: 0 0 25px 305px;
 
   font-family: $font-text;
   font-style: normal;
@@ -74,13 +75,24 @@
 
   color: $gray-text;
 
+  @media (max-width: $tablet-width) {
+    margin: 0 0 20px 189px;
+  }
+
   @media (max-width: $mobile-width) {
-    margin: 0 0 25px 0;
+    margin: 0 0 41px 0;
 
     font-size: 16px;
     line-height: 22px;
+
   }
 
+}
+
+.about-us__text span {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .about-us__link {
@@ -88,7 +100,7 @@
   width: 180px;
   height: 45px;
 
-  margin: 0 0 0 178px;
+  margin: 38px 0 0 305px;
   padding: 14px 0 16px;
 
   font-family: $font-header;
@@ -104,8 +116,12 @@
   border: 1px solid $blue;
   border-radius: 5px;
 
+  @media (max-width: $tablet-width) {
+    margin: 42px 0 0 189px;
+  }
+
   @media (max-width: $mobile-width) {
-    margin: 0 0 25px 0;
+    margin: 0 0 0 0;
   }
 
   &:hover {
