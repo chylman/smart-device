@@ -16,6 +16,9 @@
   const accordions = Array.from(document.querySelectorAll('.accordion'));
   const accordionsTitle = Array.from(document.querySelectorAll('.accordion__title'));
   const linksForSmooth = Array.from(document.querySelectorAll('.smooth-link'));
+  const popapBack = document.createElement('div');
+
+
 
   if (accordions) {
     accordions.forEach((element) => {
@@ -55,14 +58,20 @@
     evt.target.value = PRE_PHONE;
   }
 
+  popapBack.classList.add('popap__background');
+
   const onPopapOpenButtonClick = (evt) => {
     evt.preventDefault();
+    pageBody.prepend(popapBack);
     popap.classList.add('popap--show');
     document.addEventListener('keydown', onPopapCloseKeydown);
     if (pageBody) {
       pageBody.classList.add('overflow-hidden');
     }
+    popapBack.addEventListener('click', onOutsidePopapClick);
   }
+
+
 
   const onPopapButtonCloseClick = (evt) => {
     if (popap.classList.contains('popap--show')) {
@@ -73,6 +82,7 @@
         pageBody.classList.remove('overflow-hidden');
       }
     }
+    popapBack.remove();
   }
 
   const onPopapCloseKeydown = (evt) => {
@@ -84,6 +94,19 @@
         }
       }
     }
+    popapBack.remove();
+  }
+
+  const onOutsidePopapClick = (evt) => {
+    if (popap.classList.contains('popap--show')) {
+      popap.classList.remove('popap--show');
+    }
+    if (pageBody) {
+      if (pageBody.classList.contains('overflow-hidden')) {
+        pageBody.classList.remove('overflow-hidden');
+      }
+    }
+    popapBack.remove();
   }
 
   const scrollTo = (element) => {

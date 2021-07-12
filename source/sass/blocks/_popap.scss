@@ -1,5 +1,5 @@
 .popap {
-  z-index: 10;
+  z-index: 99;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,6 +12,17 @@
   margin: auto;
 
   background-color: $blue;
+}
+
+.popap__background {
+  z-index: 98;
+  position: fixed;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: black;
+  opacity: 0.3;
 }
 
 .popap--show {
