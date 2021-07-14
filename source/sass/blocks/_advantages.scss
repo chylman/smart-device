@@ -25,25 +25,25 @@
   flex-wrap: wrap;
   justify-content: center;
   column-gap: 30px;
-  row-gap: 30px;
 
   max-width: 1170px;
   margin: 0;
   padding: 0;
   list-style: none;
-
-  @media (max-width: $mobile-width) {
-    row-gap: 20px;
-  }
 }
 
 .advantages__item {
   display: block;
   width: calc(50% - 15px);
   min-height: 299px;
+  margin-bottom: 30px;
 
   border: 1px solid $gray-card-border;
   border-left: 3px solid $blue;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @media (max-width: $tablet-width) {
     max-width: 345px;
@@ -54,6 +54,11 @@
     max-width: 300px;
     min-height: 232px;
     width: 100%;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &:hover {

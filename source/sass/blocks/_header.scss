@@ -5,6 +5,8 @@
 }
 
 .header__wrapper {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -43,10 +45,14 @@
   justify-content: flex-start;
   align-items: baseline;
   row-gap: 20px;
-  margin: 0 0 0 30px;
+  margin: 0 170px 4px 30px;
   padding: 0;
 
   list-style: none;
+
+  @media (max-width: $tablet-width) {
+    margin: 0 0 0 30px;
+  }
 }
 
 .header__item {
@@ -56,7 +62,7 @@
   margin: 0 61px 0 0;
 
   @media (max-width: $tablet-width) {
-    margin: 0 14px 0 0;
+    margin: 0 0 0 0;
   }
 
   @media (max-width: $mobile-width) {
@@ -89,6 +95,7 @@
   display: inline-block;
   vertical-align: baseline;
   margin: 0 0 0 7px;
+
   @media (max-width: $tablet-width) {
     display: none;
   }
@@ -97,6 +104,24 @@
 .header__link--email,
 .header__link--phone {
   margin: 0 0 0 19px;
+
+  @media (max-width: $tablet-width) {
+    padding: 0 0 3px 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin: 0 0 12px 4px;
+    padding: 0;
+  }
+}
+
+.header__link--email {
+  @media (max-width: $tablet-width) {
+    margin-right: 15px;
+  }
+  @media (max-width: $mobile-width) {
+    margin-right: 0;
+  }
 }
 
 .header__link--email svg {
@@ -114,6 +139,9 @@
 }
 
 .header__link--button {
+  position: absolute;
+  top: 36px;
+  right: 21px;
   display: block;
   width: 180px;
   height: 45px;

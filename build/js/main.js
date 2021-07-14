@@ -13,6 +13,7 @@
   const accordionsTitle = Array.from(document.querySelectorAll('.accordion__title'));
   const linksForSmooth = Array.from(document.querySelectorAll('.smooth-link'));
   const popupBack = document.querySelector('.outside-popap-forcloseclick');
+  const popupInputName = document.querySelector('#name-popup');
 
   accordions.forEach((element) => {
     element.classList.add('accordion--close');
@@ -45,9 +46,10 @@
     }
     popupBack.addEventListener('click', onOutsidepopupClick);
     popupBack.classList.add('outside-popap-forcloseclick--show');
+    if (popupInputName) {
+      popupInputName.focus();
+    }
   }
-
-
 
   const onpopupButtonCloseClick = (evt) => {
     popup.classList.remove('popup--show');

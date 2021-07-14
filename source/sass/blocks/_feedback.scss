@@ -1,15 +1,12 @@
 .feedback {
   background-color: $blue;
-  background-image: url('../img/paper-airplane.png'),
-                    url('../img/background-feedback.svg');
-  background-position: right 1050px top 160px, left 50% top 50%;
-  background-repeat: no-repeat,
-                      no-repeat;
-  background-size: 30% auto, auto auto;
+  background-image: url('../img/background-feedback.svg');
+  background-position: left 50% top 50%;
+  background-repeat: no-repeat;
+  background-size: auto auto;
 
   @media (min-resolution: 2dppx) {
-    background-image: url('../img/paper-airplane.png'),
-                      url('../img/background-feedback.svg');
+    background-image: url('../img/background-feedback.svg');
   }
 
   @media (max-width: $tablet-width) {
@@ -18,13 +15,17 @@
 }
 
 .feedback__wrapper {
+  position: relative;
+
   box-sizing: border-box;
   max-width: 1451px;
   margin: 0 auto;
   padding: 88px 20px 108px;
 
+
+
   @media (max-width: $tablet-width) {
-    padding: 83px 25px 85px;
+    padding: 79px 25px 104px;
   }
 
   @media (max-width: $mobile-width) {
@@ -38,7 +39,7 @@
   padding: 0 122px;
 
   @media (max-width: $tablet-width) {
-    padding: 0 47px 0 64px;
+    padding: 0 57px 0 64px;
 
     justify-content: center;
   }
@@ -51,7 +52,6 @@
 
 .feedback__form-wrapper form {
   position: relative;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, min-content);
@@ -59,15 +59,41 @@
 
   margin: 0 0 0 0;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 73px;
+    right: 660px;
+    display: block;
+    width: 26vw;
+    height: 40vh;
+
+    background-image: url('../img/paper-airplane.png'),
+                      url('../img/background-feedback.svg');
+    background-repeat: no-repeat,
+                        no-repeat;
+    background-size: contain, auto auto;
+    background-position: top center, top center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/paper-airplane.png'),
+                        url('../img/background-feedback.svg');
+    }
+  }
+
   @media (max-width: $tablet-width) {
     min-width: 591px;
+
+    &::before {
+      display: none;
+    }
   }
 
   @media (max-width: $mobile-width) {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
 
-    row-gap: 25px;
+    row-gap: 0;
 
     min-width: initial;
   }
@@ -79,6 +105,8 @@
   margin: 0 0 7px 0;
 
   @media (max-width: $tablet-width) {
+    margin: 0;
+
     font-size: 32px;
     line-height: 140.62%;
   }
@@ -99,6 +127,10 @@
 
   margin-bottom: 49px;
 
+  @media (max-width: $tablet-width) {
+    margin-bottom: 55px;
+  }
+
   @media (max-width: $mobile-width) {
     grid-column: auto;
     grid-row: auto;
@@ -116,7 +148,7 @@
   padding: 14px 16px;
 
   @media (max-width: $tablet-width) {
-    margin: 40px 0 66px;
+    margin: 40px 0 54px;
     max-width: 579px;
   }
 
@@ -130,12 +162,16 @@
 }
 
 .feedback__form-wrapper .custom-checkbox {
-  align-self: flex-end;
+  align-self: center;
 
   position: relative;
   padding: 0 0 0 39px;
 
   cursor: pointer;
+
+  @media (max-width: $mobile-width) {
+    padding: 0 0 0 34px;
+  }
 }
 
 .custom-checkbox::before {
