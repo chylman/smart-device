@@ -1,4 +1,8 @@
 @media (max-width: $mobile-width) {
+  .accordion {
+    position: relative;
+  }
+
   .accordion .accordion__title {
     position: relative;
     cursor: pointer;
@@ -32,7 +36,7 @@
 
     position: absolute;
     right: 0;
-    top: 0;
+    top: 7px;
 
     display: block;
     width: 16px;

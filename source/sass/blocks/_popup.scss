@@ -1,0 +1,106 @@
+.popup {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: none;
+  width: 490px;
+  height: 605px;
+  margin: auto;
+
+  background-color: $blue;
+}
+
+.popup--show {
+  display: block;
+}
+
+.popup__wrapper {
+  position: relative;
+  padding: 33px 39px 36px;
+}
+
+.popup__wrapper form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+}
+
+.popup__wrapper h2 {
+  margin: 0;
+}
+
+.popup__wrapper p {
+  margin: 0;
+}
+
+.popup__wrapper textarea {
+  height: 104px;
+  padding: 14px 16px;
+}
+
+.popup__wrapper .custom-checkbox {
+  position: relative;
+  padding: 0 0 0 39px;
+
+  cursor: pointer;
+}
+
+.custom-checkbox::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 7px;
+
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid $white;
+}
+
+.popup__wrapper input[type='checkbox']:checked + .custom-checkbox::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 10.5px;
+
+  display: block;
+  width: 8px;
+  height: 5px;
+
+  background-image: url('../img/check.svg');
+}
+
+.popup__wrapper input {
+  height: 50px;
+  padding: 12px 16px;
+}
+
+.popup__wrapper button[type='submit'] {
+  height: 45px;
+}
+
+.popup__button-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 17px;
+  height: 17px;
+
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

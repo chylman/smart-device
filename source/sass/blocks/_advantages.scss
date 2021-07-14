@@ -6,9 +6,10 @@
   display: flex;
   justify-content: center;
 
-  max-width: 1920px;
+  box-sizing: border-box;
+  max-width: 1411px;
   margin: 0 auto;
-  padding: 110px 13% 0;
+  padding: 110px 20px 0;
 
   @media (max-width: $tablet-width) {
     padding: 54px 25px 0;
@@ -38,7 +39,7 @@
 
 .advantages__item {
   display: block;
-  max-width: 570px;
+  width: calc(50% - 15px);
   min-height: 299px;
 
   border: 1px solid $gray-card-border;
@@ -52,6 +53,7 @@
   @media (max-width: $mobile-width) {
     max-width: 300px;
     min-height: 232px;
+    width: 100%;
   }
 
   &:hover {

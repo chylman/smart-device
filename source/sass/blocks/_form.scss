@@ -1,0 +1,132 @@
+.form h2,
+.form h3 {
+  font-family: $font-header;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 51px;
+
+  color: $white;
+
+  @media (max-width: $mobile-width) {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 140.62%;
+  }
+}
+
+.form p {
+  font-family: $font-header;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: $white;
+
+  @media (max-width: $mobile-width) {
+    font-family: $font-text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.form textarea {
+  font-family: $font-text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: $white;
+  resize: none;
+}
+
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='number'],
+.form input[type='search'],
+.form input[type='tel'],
+.form textarea {
+  border: none;
+  background-color: $white-op10;
+
+  &::placeholder {
+    font-family: $font-text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+
+    color: $white;
+  }
+}
+
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='number'],
+.form input[type='search'],
+.form input[type='tel'] {
+  padding: 12px 16px;
+
+  font-family: $font-text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: $white;
+}
+
+.form input[type='checkbox'] {
+  position: absolute;
+  bottom: 0;
+  left: 60%;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+
+.form label {
+  font-family: $font-text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: $white-op80;
+}
+
+.form button[type='submit'] {
+  font-family: $font-header;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: $white;
+  border: 1px solid $white;
+  border-radius: 5px;
+  background-color: $blue;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.form input[type='checkbox']:focus + .custom-checkbox,
+.form input[type='checkbox']:hover + .custom-checkbox {
+  opacity: 0.7;
+}

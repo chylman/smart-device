@@ -6,45 +6,28 @@
     ESC: 'Esc',
   }
 
-  const PRE_PHONE = '+7 (9';
-
-  const pageBody = document.querySelector('.page-body');
-  const popapOpenButton = document.querySelector('.header__link--button');
-  const popap = document.querySelector('.popap');
-  const popapButtonClose = popap.querySelector('.popap__button-close');
-  const inputsPhone = Array.from(document.querySelectorAll('input[type=tel]'));
+  const popupOpenButton = document.querySelector('.header__link--button');
+  const popup = document.querySelector('.popup');
+  const popupButtonClose = popup.querySelector('.popup__button-close');
   const accordions = Array.from(document.querySelectorAll('.accordion'));
   const accordionsTitle = Array.from(document.querySelectorAll('.accordion__title'));
   const linksForSmooth = Array.from(document.querySelectorAll('.smooth-link'));
-  const popapBack = document.createElement('div');
+  const popupBack = document.querySelector('.outside-popap-forcloseclick');
 
-
-
-  if (accordions) {
-    accordions.forEach((element) => {
-      element.classList.add('accordion--close');
-    })
-  }
+  accordions.forEach((element) => {
+    element.classList.add('accordion--close');
+  })
 
   const onAccordionsTitleClick = (evt) => {
     accordions.forEach(element => {
       if (element !== evt.target.parentNode) {
-        if (element.classList.contains('accordion--open')) {
           element.classList.remove('accordion--open');
-        }
-        if (!element.classList.contains('accordion--close')) {
           element.classList.add('accordion--close');
-        }
       }
     });
 
-    if (evt.target.parentNode.classList.contains('accordion--open')) {
-      evt.target.parentNode.classList.remove('accordion--open');
-      evt.target.parentNode.classList.add('accordion--close');
-    } else {
-      evt.target.parentNode.classList.remove('accordion--close');
-      evt.target.parentNode.classList.add('accordion--open');
-    }
+      evt.target.parentNode.classList.toggle('accordion--open');
+      evt.target.parentNode.classList.toggle('accordion--close');
   }
 
   if (accordionsTitle) {
@@ -53,60 +36,37 @@
     });
   }
 
-  const onInputPhoneFocus = (evt) => {
-    console.log(evt);
-    evt.target.value = PRE_PHONE;
-  }
-
-  popapBack.classList.add('popap__background');
-
-  const onPopapOpenButtonClick = (evt) => {
+  const onpopupOpenButtonClick = (evt) => {
     evt.preventDefault();
-    pageBody.prepend(popapBack);
-    popap.classList.add('popap--show');
-    document.addEventListener('keydown', onPopapCloseKeydown);
-    if (pageBody) {
-      pageBody.classList.add('overflow-hidden');
+    popup.classList.add('popup--show');
+    document.addEventListener('keydown', onpopupCloseKeydown);
+    if (document.body) {
+      document.body.classList.add('overflow-hidden');
     }
-    popapBack.addEventListener('click', onOutsidePopapClick);
+    popupBack.addEventListener('click', onOutsidepopupClick);
+    popupBack.classList.add('outside-popap-forcloseclick--show');
   }
 
 
 
-  const onPopapButtonCloseClick = (evt) => {
-    if (popap.classList.contains('popap--show')) {
-      popap.classList.remove('popap--show');
-    }
-    if (pageBody) {
-      if (pageBody.classList.contains('overflow-hidden')) {
-        pageBody.classList.remove('overflow-hidden');
-      }
-    }
-    popapBack.remove();
+  const onpopupButtonCloseClick = (evt) => {
+    popup.classList.remove('popup--show');
+    document.body.classList.remove('overflow-hidden');
+    popupBack.classList.remove('outside-popap-forcloseclick--show');
   }
 
-  const onPopapCloseKeydown = (evt) => {
+  const onpopupCloseKeydown = (evt) => {
     if (evt.key === Keys.ESCAPE ||evt.key === Keys.ESC) {
-      popap.classList.remove('popap--show');
-      if (pageBody) {
-        if (pageBody.classList.contains('overflow-hidden')) {
-          pageBody.classList.remove('overflow-hidden');
-        }
-      }
+      popup.classList.remove('popup--show');
+      document.body.classList.remove('overflow-hidden');
+      popupBack.classList.remove('outside-popap-forcloseclick--show');
     }
-    popapBack.remove();
   }
 
-  const onOutsidePopapClick = (evt) => {
-    if (popap.classList.contains('popap--show')) {
-      popap.classList.remove('popap--show');
-    }
-    if (pageBody) {
-      if (pageBody.classList.contains('overflow-hidden')) {
-        pageBody.classList.remove('overflow-hidden');
-      }
-    }
-    popapBack.remove();
+  const onOutsidepopupClick = (evt) => {
+    popup.classList.remove('popup--show');
+    document.body.classList.remove('overflow-hidden');
+    popupBack.classList.remove('outside-popap-forcloseclick--show');
   }
 
   const scrollTo = (element) => {
@@ -128,17 +88,11 @@
     });
   }
 
-  if (popapOpenButton) {
-    popapOpenButton.addEventListener('click', onPopapOpenButtonClick);
+  if (popupOpenButton) {
+    popupOpenButton.addEventListener('click', onpopupOpenButtonClick);
   }
 
-  if (popapButtonClose) {
-    popapButtonClose.addEventListener('click', onPopapButtonCloseClick);
-  }
-
-  if (inputsPhone) {
-    inputsPhone.forEach(element => {
-      element.addEventListener('focus', onInputPhoneFocus);
-    })
+  if (popupButtonClose) {
+    popupButtonClose.addEventListener('click', onpopupButtonCloseClick);
   }
 }())
