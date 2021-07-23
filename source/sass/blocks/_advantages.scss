@@ -3,12 +3,11 @@
 }
 
 .advantages__wrapper {
+  @include wrapper;
+
   display: flex;
   justify-content: center;
 
-  box-sizing: border-box;
-  max-width: 1411px;
-  margin: 0 auto;
   padding: 110px 20px 0;
 
   @media (max-width: $tablet-width) {

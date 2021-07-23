@@ -5,15 +5,14 @@
 }
 
 .header__wrapper {
+  @include wrapper;
+
   position: relative;
 
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 
-  box-sizing: border-box;
-  max-width: 1451px;
-  margin: 0 auto;
   padding: 33px 20px 33px;
 
   @media (max-width: $tablet-width) {

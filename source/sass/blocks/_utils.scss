@@ -2,7 +2,7 @@
   overflow: hidden;
 }
 
-.outside-popap-forcloseclick {
+.popup-overlay {
   display: none;
   z-index: 98;
   position: fixed;
@@ -19,6 +19,6 @@
   opacity: 0.3;
 }
 
-.outside-popap-forcloseclick--show {
+.popup-overlay--show {
   display: block;
 }

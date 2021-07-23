@@ -19,13 +19,12 @@
 }
 
 .footer__wrapper {
+  @include wrapper;
+
   display: grid;
   grid-template-columns: 1fr min-content 1fr 1fr 1fr;
   grid-template-rows: min-content min-content min-content;
 
-  box-sizing: border-box;
-  max-width: 1451px;
-  margin: 0 auto;
   padding: 65px 20px 14px;
 
   @media (max-width: $tablet-width) {

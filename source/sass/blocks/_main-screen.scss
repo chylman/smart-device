@@ -40,11 +40,10 @@
 }
 
 .main-screen__wrapper {
+  @include wrapper;
+
   position: relative;
 
-  box-sizing: border-box;
-  max-width: 1451px;
-  margin: 0 auto;
   padding: 314px 20px 275px;
 
   @media (max-width: $tablet-width) {

@@ -8,11 +8,11 @@
 
   const popupOpenButton = document.querySelector('.header__link--button');
   const popup = document.querySelector('.popup');
-  const popupButtonClose = popup.querySelector('.popup__button-close');
+  const popupButtonClose = document.querySelector('.popup__button-close');
   const accordions = Array.from(document.querySelectorAll('.accordion'));
   const accordionsTitle = Array.from(document.querySelectorAll('.accordion__title'));
   const linksForSmooth = Array.from(document.querySelectorAll('.smooth-link'));
-  const popupBack = document.querySelector('.outside-popap-forcloseclick');
+  const popupOverlay = document.querySelector('.popup-overlay');
   const popupInputName = document.querySelector('#name-popup');
 
   accordions.forEach((element) => {
@@ -31,44 +31,40 @@
       evt.target.parentNode.classList.toggle('accordion--close');
   }
 
-  if (accordionsTitle) {
-    accordionsTitle.forEach(element => {
-      element.addEventListener('click', onAccordionsTitleClick);
-    });
-  }
+  accordionsTitle.forEach(element => {
+    element.addEventListener('click', onAccordionsTitleClick);
+  });
 
-  const onpopupOpenButtonClick = (evt) => {
+  const onPopupOpenButtonClick = (evt) => {
     evt.preventDefault();
     popup.classList.add('popup--show');
-    document.addEventListener('keydown', onpopupCloseKeydown);
-    if (document.body) {
-      document.body.classList.add('overflow-hidden');
-    }
-    popupBack.addEventListener('click', onOutsidepopupClick);
-    popupBack.classList.add('outside-popap-forcloseclick--show');
+    document.addEventListener('keydown', onPopupCloseKeydown);
+    document.body.classList.add('overflow-hidden');
+    popupOverlay.addEventListener('click', onPopupOverlayClick);
+    popupOverlay.classList.add('popup-overlay--show');
     if (popupInputName) {
       popupInputName.focus();
     }
   }
 
-  const onpopupButtonCloseClick = (evt) => {
+  const onPopupButtonCloseClick = (evt) => {
     popup.classList.remove('popup--show');
     document.body.classList.remove('overflow-hidden');
-    popupBack.classList.remove('outside-popap-forcloseclick--show');
+    popupOverlay.classList.remove('popup-overlay--show');
   }
 
-  const onpopupCloseKeydown = (evt) => {
+  const onPopupCloseKeydown = (evt) => {
     if (evt.key === Keys.ESCAPE ||evt.key === Keys.ESC) {
       popup.classList.remove('popup--show');
       document.body.classList.remove('overflow-hidden');
-      popupBack.classList.remove('outside-popap-forcloseclick--show');
+      popupOverlay.classList.remove('popup-overlay--show');
     }
   }
 
-  const onOutsidepopupClick = (evt) => {
+  const onPopupOverlayClick = (evt) => {
     popup.classList.remove('popup--show');
     document.body.classList.remove('overflow-hidden');
-    popupBack.classList.remove('outside-popap-forcloseclick--show');
+    popupOverlay.classList.remove('popup-overlay--show');
   }
 
   const scrollTo = (element) => {
@@ -84,17 +80,15 @@
     scrollTo(document.querySelector(evt.target.hash));
   }
 
-  if (linksForSmooth) {
-    linksForSmooth.forEach(element => {
-      element.addEventListener('click', onLinksForSmoothClick);
-    });
-  }
+  linksForSmooth.forEach(element => {
+    element.addEventListener('click', onLinksForSmoothClick);
+  });
 
   if (popupOpenButton) {
-    popupOpenButton.addEventListener('click', onpopupOpenButtonClick);
+    popupOpenButton.addEventListener('click', onPopupOpenButtonClick);
   }
 
   if (popupButtonClose) {
-    popupButtonClose.addEventListener('click', onpopupButtonCloseClick);
+    popupButtonClose.addEventListener('click', onPopupButtonCloseClick);
   }
 }())
