@@ -14,6 +14,7 @@
   const linksForSmooth = Array.from(document.querySelectorAll('.smooth-link'));
   const popupOverlay = document.querySelector('.popup-overlay');
   const popupInputName = document.querySelector('#name-popup');
+  const selector = document.querySelectorAll("input[type='tel']");
 
   accordions.forEach((element) => {
     element.classList.add('accordion--close');
@@ -91,4 +92,7 @@
   if (popupButtonClose) {
     popupButtonClose.addEventListener('click', onPopupButtonCloseClick);
   }
+
+  const im = new Inputmask({"placeholder":" "});
+  im.mask(selector);
 }())

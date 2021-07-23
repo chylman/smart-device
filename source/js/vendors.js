@@ -2854,8 +2854,3 @@
 			}(), i;
 	}();
 }));
-
-var selector = document.querySelectorAll("input[type='tel']");
-
-var im = new Inputmask({"placeholder":" "});
-im.mask(selector);
