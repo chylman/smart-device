@@ -7,7 +7,7 @@
 
   position: relative;
 
-  padding: 110px 20px;
+  padding: 77px 20px 110px;
 
   @media (max-width: $tablet-width) {
     padding: 49px 25px 82px 25px;
@@ -22,7 +22,7 @@
 .about-us__wrapper h2 {
   position: relative;
 
-  margin: 0 0 15px 280px;
+  margin: 0 0 20px 280px;
 
   font-family: $font-header;
   font-style: normal;
@@ -114,8 +114,8 @@
 .about-us__wrapper img {
   position: absolute;
 
-  top: 110px;
-  left: 85px;
+  top: 81px;
+  left: 89px;
 
   display: block;
   width: 220px;

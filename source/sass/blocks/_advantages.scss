@@ -41,12 +41,17 @@
   border-left: 3px solid $blue;
 
   &:last-child {
+    max-height: 300px;
     margin-bottom: 0;
   }
 
   @media (max-width: $tablet-width) {
     max-width: 345px;
     min-height: 232px;
+
+    &:last-child {
+      max-height: initial;
+    }
   }
 
   @media (max-width: $mobile-width) {

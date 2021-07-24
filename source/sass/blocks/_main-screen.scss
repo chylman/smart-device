@@ -7,7 +7,7 @@
                     url('../img/two-triangle.svg');
   background-repeat: no-repeat;
   background-position: top,
-                        top 71% left 1080px,
+                        top 71% left 1040px,
                         top 71% left 35px;
   background-size: cover,
                   auto auto,
@@ -44,7 +44,7 @@
 
   position: relative;
 
-  padding: 314px 20px 275px;
+  padding: 314px 16px 275px;
 
   @media (max-width: $tablet-width) {
     padding: 187px 25px 165px;
